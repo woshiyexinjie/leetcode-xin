@@ -1,0 +1,40 @@
+Write a SQL query to get the second highest salary from the Employee table.
+
++----+--------+
+| Id | Salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+For example, given the above Employee table, the query should return 200 as the second highest salary. If there is no second highest salary, then the query should return null.
+
++---------------------+
+| SecondHighestSalary |
++---------------------+
+| 200                 |
++---------------------+
+
+https://leetcode.com/problems/second-highest-salary/description/
+
+solution:
+
+本想找第二高的就是子查询找到 两个最高的 然后取最小的那个
+select Salary as SecondHighestSalary from
+(select * from Employee order by Salary desc limit 2) temp
+order by Salary  asc limit 1
+但是执行 告诉我结果是错的  原来题目的要求中没有第二高的就返回 null
+
+看来转换思路很重要呀，当时想按照上面的方式 怎么处理子查询只有一条的情况呀 真是陷入了自己的坑
+然后按照取到max最大的，从比最大的小中的最大的，如果我要取第三大的 是不是比较坑
+SELECT MAX(Salary) as SecondHighestSalary
+FROM Employee
+WHERE Salary < (SELECT MAX(Salary) FROM Employee);
+
+
+然后去看看网上的大神都是怎么处理的
+SELECT Salary as SecondHighestSalary FROM Employee GROUP BY Salary
+UNION ALL (SELECT NULL AS SecondHighestSalary)
+ORDER BY SecondHighestSalary DESC LIMIT 1,1;
+如果是我 mysql估计就会卡在这边怎么处理null的问题出不来了
+SELECT Salary as SecondHighestSalary FROM Employee GROUP BY Salary  DESC LIMIT 1,1

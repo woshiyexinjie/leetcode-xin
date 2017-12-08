@@ -1,0 +1,48 @@
+Employees Earning More Than Their Managers
+The Employee table holds all employees including their managers. Every employee has an Id, and there is also a column for the manager Id.
+
++----+-------+--------+-----------+
+| Id | Name  | Salary | ManagerId |
++----+-------+--------+-----------+
+| 1  | Joe   | 70000  | 3         |
+| 2  | Henry | 80000  | 4         |
+| 3  | Sam   | 60000  | NULL      |
+| 4  | Max   | 90000  | NULL      |
++----+-------+--------+-----------+
+Given the Employee table, write a SQL query that finds out employees who earn more than their managers. For the above table, Joe is the only employee who earns more than his manager.
+
++----------+
+| Employee |
++----------+
+| Joe      |
++----------+
+
+solution：
+
+我想只要找出比领导大就行了吧 其中题目也没说清楚  本来以为领导的ManagerId都是 null ，加了一个判断，但是测试里面
+select Name as Employee from Employee e1
+where e1.ManagerId is not null
+and e1.Salary > (
+    select Salary from Employee e2
+    where
+    e1.ManagerId = e2.Id
+    limit 1
+)
+
+发现想复杂了 原来和自己关联一下就行了  尴尬 忘了这一茬
+SELECT
+    a.Name AS 'Employee'
+FROM
+    Employee AS a,
+    Employee AS b
+WHERE
+    a.ManagerId = b.Id
+        AND a.Salary > b.Salary;
+
+
+SELECT
+     a.NAME AS Employee
+FROM Employee AS a JOIN Employee AS b
+     ON a.ManagerId = b.Id
+     AND a.Salary > b.Salary;
+

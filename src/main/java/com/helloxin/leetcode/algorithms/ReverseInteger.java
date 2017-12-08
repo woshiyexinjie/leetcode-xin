@@ -47,6 +47,20 @@ public class ReverseInteger {
         return reverse.intValue();
     }
 
+    public static int reverse2(int x) {
+        int y=0;
+        int n;
+        while( x != 0){
+            n = x%10;
+            if (y > Integer.MAX_VALUE/10 || y < Integer.MIN_VALUE/10){
+                return 0;
+            }
+            y = y*10 + n;
+            x /= 10;
+        }
+        return y;
+    }
+
     public static void main(String[] args) {
         System.out.println(reverse(1534236469));
     }

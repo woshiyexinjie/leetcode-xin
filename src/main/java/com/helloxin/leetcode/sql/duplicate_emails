@@ -1,0 +1,26 @@
+Duplicate Emails
+Write a SQL query to find all duplicate emails in a table named Person.
+
++----+---------+
+| Id | Email   |
++----+---------+
+| 1  | a@b.com |
+| 2  | c@d.com |
+| 3  | a@b.com |
++----+---------+
+For example, your query should return the following for the above table:
+
++---------+
+| Email   |
++---------+
+| a@b.com |
++---------+
+
+solution:
+
+select distinct Email from Person p1 where 1 <(select count(1) from Person p2 where p2.Email = p1.Email)
+一般上面那么写的 可以用下面的改写
+select distinct p1.email from Person p1, Person p2 where p1.email = p2.email and p1.Id != p2.Id
+
+使用having
+select Email from Person group by Email having count(id) > 1;

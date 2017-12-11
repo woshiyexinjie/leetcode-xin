@@ -1,0 +1,31 @@
+Write a SQL query to delete all duplicate email entries in a table named Person, keeping only unique emails based on its smallest Id.
+
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
+| 3  | john@example.com |
++----+------------------+
+Id is the primary key column for this table.
+For example, after running your query, the above Person table should have the following rows:
+
++----+------------------+
+| Id | Email            |
++----+------------------+
+| 1  | john@example.com |
+| 2  | bob@example.com  |
++----+------------------+
+https://leetcode.com/problems/delete-duplicate-emails/description/
+
+solution:
+
+我想了半天  然后不是有group 但是我发现需要我保留小的那个
+delete from Person  where  Id not in (select iid from (select Min(Id) as iid from Person p1  group by Email  ) as temp )
+
+原来还可以这么关联  学习了
+DELETE p1 FROM Person p1 INNER JOIN Person p2
+WHERE p1.Email = p2.Email AND p1.Id > p2.Id;
+
+DELETE FROM p1 USING Person p1 INNER JOIN Person p2
+WHERE p1.Email = p2.Email AND p1.Id > p2.Id;

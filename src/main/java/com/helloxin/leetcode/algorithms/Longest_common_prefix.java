@@ -53,6 +53,7 @@ public class Longest_common_prefix {
 
     /**
      * Divide and conquer  这是看solution 里面 前辈们写的第三种方法  想不到 而且我也不习惯使用递归的编程
+     * 或许是因为递归 没有那么直观看到怎么执行的
      * 用于这个道题目到没看出什么优势 但是熟悉这个概念还不错
      *
      * @param strs
@@ -89,7 +90,7 @@ public class Longest_common_prefix {
     }
 
     /**
-     * Binary search  在什么情况下  需要考虑这么写呢
+     * Binary search  在什么情况下  需要考虑这么写呢 这是solution中提供的第四种方法
      * @param strs
      * @return
      */
@@ -129,7 +130,7 @@ public class Longest_common_prefix {
 
 
     public static void main(String[] args) {
-        System.out.println(longestCommonPrefix(new String[]{"YE","xinjie"}));
+        System.out.println(longestCommonPrefix3(new String[]{"YE","YE"}));
     }
 }
 

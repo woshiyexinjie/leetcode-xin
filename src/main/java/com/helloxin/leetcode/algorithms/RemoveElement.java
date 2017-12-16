@@ -26,17 +26,14 @@ public class RemoveElement {
 
     public static int removeElement(int[] nums, int val) {
         int i = 0;
-        int n = nums.length;
-        while (i < n) {
-            if (nums[i] == val) {
-                nums[i] = nums[n - 1];
-                //这种感觉和for循环 从后面开始的感觉差不多
-                n--;
-            } else {
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != val) {
+                nums[i] = nums[j];
                 i++;
+                //nums[++i] = nums[j];
             }
         }
-        return n;
+        return i;
     }
 
     public static int removeElement2(int[] nums, int val) {

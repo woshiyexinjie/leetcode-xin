@@ -3,7 +3,7 @@ package com.helloxin.leetcode.algorithms;
 /**
  *  create by one leaf on 2017/12/12
  */
-public class Longest_common_prefix {
+public class LongestCommonPrefix {
 
     /**
      * 根据String的indexOf和substring 来找他们的公众部分

@@ -24,4 +24,38 @@ package com.helloxin.leetcode.algorithms;
  **/
 public class RemoveElement {
 
+    public static int removeElement(int[] nums, int val) {
+        int i = 0;
+        int n = nums.length;
+        while (i < n) {
+            if (nums[i] == val) {
+                nums[i] = nums[n - 1];
+                //这种感觉和for循环 从后面开始的感觉差不多
+                n--;
+            } else {
+                i++;
+            }
+        }
+        return n;
+    }
+
+    public static int removeElement2(int[] nums, int val) {
+        int i = 0;
+        int n = nums.length;
+        while (i < n) {
+            if (nums[i] == val) {
+                nums[i] = nums[n - 1];
+                // reduce array size by one
+                n--;
+            } else {
+                i++;
+            }
+        }
+        return n;
+    }
+
+    public static void main(String[] args) {
+        int [] nums = {3,3,3,3,2,3,3,3,3,3};
+        System.out.println(removeElement2(nums,3));
+    }
 }

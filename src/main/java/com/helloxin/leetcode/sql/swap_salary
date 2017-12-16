@@ -35,4 +35,4 @@ ELSE '其他' END
 --Case搜索函数
 CASE WHEN sex = '1' THEN '男'
          WHEN sex = '2' THEN '女'
-ELSE '其他' END 
+ELSE '其他' END

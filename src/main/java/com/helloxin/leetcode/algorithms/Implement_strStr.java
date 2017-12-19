@@ -16,6 +16,9 @@ package com.helloxin.leetcode.algorithms;
 
  */
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * create by nandiexin on 2017/12/19
  **/
@@ -57,9 +60,25 @@ public class Implement_strStr {
         return -1;
     }
 
+    /**
+     * 然后就可以用正则表达式啦  当然正则这个包在leetcode是通不过的哈
+     * @param haystack
+     * @param needle
+     * @return
+     */
+    public static int strStr3(String haystack, String needle){
+        Pattern p = Pattern.compile(needle);
+        Matcher m = p.matcher(haystack);
+
+        while(m.find()) {
+           return m.start();
+        }
+        return -1;
+    }
+
 
 
     public static void main(String[] args) {
-        System.out.println(strStr("hello","ll"));
+        System.out.println(strStr3("hello","lp"));
     }
 }

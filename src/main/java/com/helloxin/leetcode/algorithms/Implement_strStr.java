@@ -1,6 +1,22 @@
 package com.helloxin.leetcode.algorithms;
 
 /**
+ * Implement strStr().
+
+ Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+
+ Example 1:
+
+ Input: haystack = "hello", needle = "ll"
+ Output: 2
+ Example 2:
+
+ Input: haystack = "aaaaa", needle = "bba"
+ Output: -1
+
+ */
+
+/**
  * create by nandiexin on 2017/12/19
  **/
 public class Implement_strStr {

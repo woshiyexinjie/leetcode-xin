@@ -1,0 +1,81 @@
+Rank Scores
+Write a SQL query to rank scores. If there is a tie between two scores, both should have the same ranking. Note that after a tie, the next ranking number should be the next consecutive integer value. In other words, there should be no "holes" between ranks.
+
++----+-------+
+| Id | Score |
++----+-------+
+| 1  | 3.50  |
+| 2  | 3.65  |
+| 3  | 4.00  |
+| 4  | 3.85  |
+| 5  | 4.00  |
+| 6  | 3.65  |
++----+-------+
+For example, given the above Scores table, your query should generate the following report (order by highest score):
+
++-------+------+
+| Score | Rank |
++-------+------+
+| 4.00  | 1    |
+| 4.00  | 1    |
+| 3.85  | 2    |
+| 3.65  | 3    |
+| 3.65  | 3    |
+| 3.50  | 4    |
++-------+------+
+
+solution:
+关联的比较朴素的思想
+SELECT Scores.Score, COUNT(Ranking.Score) AS RANK
+FROM Scores
+     , (
+       SELECT DISTINCT Score
+         FROM Scores
+       ) Ranking
+ WHERE Scores.Score <= Ranking.Score
+ GROUP BY Scores.Id, Scores.Score
+ ORDER BY Scores.Score DESC;
+
+和上面方法是一样的
+select Scores.Score, COUNT(Ranking.Score) AS RANK
+from Scores
+join (
+            SELECT DISTINCT Score
+              FROM Scores
+            ) Ranking
+ WHERE Scores.Score <= Ranking.Score
+  GROUP BY Scores.Id, Scores.Score
+  ORDER BY Scores.Score DESC;
+
+下面 这个查的方式不同  感觉和调用for循环一样
+SELECT Score,
+(SELECT COUNT(DISTINCT Score) FROM Scores WHERE Score >= s.Score) Rank
+FROM Scores s ORDER BY Score DESC;
+
+
+SELECT Score,
+(SELECT COUNT(*) FROM (SELECT DISTINCT Score s FROM Scores) t WHERE s >= Score) Rank
+FROM Scores ORDER BY Score DESC;
+
+下面的写法就变态一点了  用了两个变量
+SELECT Score,
+@rank := @rank + (@pre <> (@pre := Score)) Rank
+FROM Scores, (SELECT @rank := 0, @pre := -1) INIT
+ORDER BY Score DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

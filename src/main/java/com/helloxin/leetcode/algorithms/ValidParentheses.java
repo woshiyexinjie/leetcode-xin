@@ -90,24 +90,24 @@ public class ValidParentheses {
     public static boolean isValid3(String s) {
 
         int len = s.length();
-        if(len==0) return true;
-        if(len%2 == 1) return false;
-        for(int i = 1; i < len; i++)
-            if(s.charAt(i-1) == '{' && s.charAt(i)=='}')
-            {
-                String ss = s.substring(0, i-1) + s.substring(i+1);
+        if(len==0) {
+            return true;
+        }
+        if(len%2 == 1) {
+            return false;
+        }
+        for(int i = 1; i < len; i++) {
+            if (s.charAt(i - 1) == '{' && s.charAt(i) == '}') {
+                String ss = s.substring(0, i - 1) + s.substring(i + 1);
+                return isValid(ss);
+            } else if (s.charAt(i - 1) == '[' && s.charAt(i) == ']') {
+                String ss = s.substring(0, i - 1) + s.substring(i + 1);
+                return isValid(ss);
+            } else if (s.charAt(i - 1) == '(' && s.charAt(i) == ')') {
+                String ss = s.substring(0, i - 1) + s.substring(i + 1);
                 return isValid(ss);
             }
-            else if(s.charAt(i-1) == '[' && s.charAt(i)==']')
-            {
-                String ss = s.substring(0, i-1) + s.substring(i+1);
-                return isValid(ss);
-            }
-            else if(s.charAt(i-1) == '(' && s.charAt(i)==')')
-            {
-                String ss = s.substring(0, i-1) + s.substring(i+1);
-                return isValid(ss);
-            }
+        }
         return false;
     }
 

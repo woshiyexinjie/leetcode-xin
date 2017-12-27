@@ -17,7 +17,6 @@ import com.helloxin.leetcode.algorithms.preparation.ListNode;
 public class RemoveDuplicatesFromSortedList {
 
 
-
     public ListNode deleteDuplicates(ListNode head) {
 
 

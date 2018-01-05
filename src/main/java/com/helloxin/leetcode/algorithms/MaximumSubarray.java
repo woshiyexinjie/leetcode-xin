@@ -9,7 +9,7 @@ the contiguous subarray [4,-1,2,1] has the largest sum = 6.
 /**
  * create by nandiexin on 2017/12/20
  **/
-public class Maximum_Subarray {
+public class MaximumSubarray {
 
       //一个是全局最优，就是到当前元素为止最优的解是，一个是局部最优，就是必须包含当前元素的最优的解。
       // 接下来说说动态规划的递推式（这是动态规划最重要的步骤，递归式出来了

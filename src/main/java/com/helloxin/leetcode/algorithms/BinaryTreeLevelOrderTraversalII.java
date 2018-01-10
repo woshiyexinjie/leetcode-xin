@@ -42,11 +42,11 @@ public class BinaryTreeLevelOrderTraversalII {
             int levelNum = queue.size();
             List<Integer> subList = new LinkedList<Integer>();
             for(int i=0; i<levelNum; i++) {
-                if(queue.peek().left != null) {
-                    queue.offer(queue.peek().left);
+                if(queue.peek().getLeft() != null) {
+                    queue.offer(queue.peek().getLeft());
                 }
-                if(queue.peek().right != null) {
-                    queue.offer(queue.peek().right);
+                if(queue.peek().getRight() != null) {
+                    queue.offer(queue.peek().getRight());
                 }
                 subList.add(queue.poll().val);
             }
@@ -68,8 +68,8 @@ public class BinaryTreeLevelOrderTraversalII {
         if(level >= list.size()) {
             list.add(0, new LinkedList<Integer>());
         }
-        levelMaker(list, root.left, level+1);
-        levelMaker(list, root.right, level+1);
+        levelMaker(list, root.getLeft(), level+1);
+        levelMaker(list, root.getRight(), level+1);
         list.get(list.size()-level-1).add(root.val);
     }
 }

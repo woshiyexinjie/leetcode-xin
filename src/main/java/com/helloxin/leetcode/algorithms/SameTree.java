@@ -50,7 +50,7 @@ public class SameTree {
         if (p == null || q == null) {
             return false;
         }
-        return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+        return p.val == q.val && isSameTree(p.getLeft(), q.getLeft()) && isSameTree(p.getRight(), q.getRight());
     }
 
     public static boolean isSameTree2(TreeNode p, TreeNode q) {
@@ -71,17 +71,17 @@ public class SameTree {
             if (tmpP.val != tmpQ.val) {
                 return false;
             }
-            if (tmpP.left != null && tmpQ.left != null) {
-                stackP.push(tmpP.left);
-                stackQ.push(tmpQ.left);
-            } else if (tmpP.left == null && tmpQ.left == null) {
+            if (tmpP.getLeft() != null && tmpQ.getLeft() != null) {
+                stackP.push(tmpP.getLeft());
+                stackQ.push(tmpQ.getLeft());
+            } else if (tmpP.getLeft() == null && tmpQ.getLeft() == null) {
             } else {
                 return false;
             }
-            if (tmpP.right != null && tmpQ.right != null) {
-                stackP.push(tmpP.right);
-                stackQ.push(tmpQ.right);
-            } else if (tmpP.right == null && tmpQ.right == null) {
+            if (tmpP.getRight() != null && tmpQ.getRight() != null) {
+                stackP.push(tmpP.getRight());
+                stackQ.push(tmpQ.getRight());
+            } else if (tmpP.getRight() == null && tmpQ.getRight() == null) {
             } else {
                 return false;
             }

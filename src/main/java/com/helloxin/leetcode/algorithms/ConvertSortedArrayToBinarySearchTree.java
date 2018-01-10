@@ -43,8 +43,8 @@ public class ConvertSortedArrayToBinarySearchTree {
         }
         int mid = (low + high) / 2;
         TreeNode node = new TreeNode(num[mid]);
-        node.left = helper(num, low, mid - 1);
-        node.right = helper(num, mid + 1, high);
+        node.setLeft(helper(num, low, mid - 1));
+        node.setRight(helper(num, mid + 1, high));
         return node;
     }
 
@@ -67,14 +67,14 @@ public class ConvertSortedArrayToBinarySearchTree {
             int mid   = left + (right-left)/2; // avoid overflow
             currNode.val = nums[mid];
             if ( left <= mid-1 ) {
-                currNode.left = new TreeNode(0);
-                nodeStack.push(currNode.left);
+                currNode.setLeft(new TreeNode(0));
+                nodeStack.push(currNode.getLeft());
                 leftIndexStack.push(left);
                 rightIndexStack.push(mid-1);
             }
             if ( mid+1 <= right ) {
-                currNode.right = new TreeNode(0);
-                nodeStack.push(currNode.right);
+                currNode.setRight(new TreeNode(0));
+                nodeStack.push(currNode.getRight());
                 leftIndexStack.push(mid+1);
                 rightIndexStack.push(right);
             }

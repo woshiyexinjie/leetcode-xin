@@ -20,7 +20,7 @@ public class MaximumDepthOfBinaryTree {
         if(root==null){
             return 0;
         }
-        return 1+Math.max(maxDepth(root.left),maxDepth(root.right));
+        return 1+Math.max(maxDepth(root.getLeft()),maxDepth(root.getRight()));
     }
 
     public static int maxDepthDFS(TreeNode root) {
@@ -37,12 +37,12 @@ public class MaximumDepthOfBinaryTree {
             TreeNode node = stack.pop();
             int temp = value.pop();
             max = Math.max(temp, max);
-            if(node.left != null) {
-                stack.push(node.left);
+            if(node.getLeft() != null) {
+                stack.push(node.getLeft());
                 value.push(temp+1);
             }
-            if(node.right != null) {
-                stack.push(node.right);
+            if(node.getRight() != null) {
+                stack.push(node.getRight());
                 value.push(temp+1);
             }
         }
@@ -60,11 +60,11 @@ public class MaximumDepthOfBinaryTree {
             int size = queue.size();
             while(size-- > 0) {
                 TreeNode node = queue.poll();
-                if(node.left != null) {
-                    queue.offer(node.left);
+                if(node.getLeft() != null) {
+                    queue.offer(node.getLeft());
                 }
-                if(node.right != null) {
-                    queue.offer(node.right);
+                if(node.getRight() != null) {
+                    queue.offer(node.getRight());
                 }
             }
             count++;
@@ -79,7 +79,7 @@ public class MaximumDepthOfBinaryTree {
 
         for (int i= 1; i<=1000;i++){
             TreeNode node = new TreeNode(i);
-            temp.right = node;
+            temp.setRight(node);
             temp = node;
         }
         long begin = System.currentTimeMillis();

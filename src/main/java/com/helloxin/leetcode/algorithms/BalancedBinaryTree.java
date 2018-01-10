@@ -28,11 +28,11 @@ public class BalancedBinaryTree {
         if(node==null){
             return 0;
         }
-        int lH=height(node.left);
+        int lH=height(node.getLeft());
         if(lH==-1){
             return -1;
         }
-        int rH=height(node.right);
+        int rH=height(node.getRight());
         if(rH==-1){
             return -1;
         }
@@ -53,8 +53,8 @@ public class BalancedBinaryTree {
         if (root == null) {
             return 0;
         }
-        int l = maxDepth(root.left);
-        int r = maxDepth(root.right);
+        int l = maxDepth(root.getLeft());
+        int r = maxDepth(root.getRight());
         if (Math.abs(l - r) > 1) {
             result = false;
         }

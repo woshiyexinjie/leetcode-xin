@@ -46,6 +46,12 @@ public class TwoSumIInputArrayIsSorted167 {
         return sum;
     }
 
+    /**
+     * 在1的基础上优化一下
+     * @param numbers
+     * @param target
+     * @return
+     */
     public static int[] twoSum2(int[] numbers, int target) {
 
         int sum[] = new int[2];
@@ -91,7 +97,8 @@ public class TwoSumIInputArrayIsSorted167 {
     }
 
     public static void main(String[] args) {
-        int array[] = {2,7,11,15};
-        System.out.println(Arrays.toString(twoSum3(array,9)));
+//        int array[] = {2,7,11,15};
+//        System.out.println(Arrays.toString(twoSum3(array,9)));
+
     }
 }

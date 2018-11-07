@@ -50,6 +50,7 @@ public class MajorityElement169 {
     }
 
     // Moore voting algorithm 摩尔投票算法
+
     public static int majorityElement2(int[] nums) {
         int count=0, ret = 0;
         for (int num: nums) {

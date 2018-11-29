@@ -15,6 +15,7 @@ import java.util.Arrays;
  */
 public class CountPrimes204 {
 
+    //想先用粗暴的方法实现一下
     public static int countPrimes(int n) {
 
         int count = 0;
@@ -27,6 +28,7 @@ public class CountPrimes204 {
 
     }
 
+    //全部判断一下是否书素数 但是这看到有是那个循环 时间复杂度接受不了
     private static boolean isPrime(int i) {
 
         if(i ==1){
@@ -43,6 +45,7 @@ public class CountPrimes204 {
 
     }
 
+    //如果稍微优化一下呢 结果还是超时
     public static boolean isPrime2(int i) {
 
         if(i ==1 ){

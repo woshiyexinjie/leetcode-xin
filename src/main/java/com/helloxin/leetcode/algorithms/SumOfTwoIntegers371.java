@@ -37,7 +37,6 @@ public class SumOfTwoIntegers371 {
             a = a ^ b;
             b = carry << 1;
         }
-
         return a;
     }
 

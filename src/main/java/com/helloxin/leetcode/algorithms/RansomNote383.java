@@ -16,7 +16,7 @@ package com.helloxin.leetcode.algorithms;
  */
 public class RansomNote383 {
 
-    //原来这道题是这个意思 用map处理也是一样的
+    //原来这道题是这个意思(没有好好理解题意，走了冤枉路) 用map处理也是一样的
     public static boolean canConstruct(String ransomNote, String magazine) {
 
         int[] arr = new int[26];

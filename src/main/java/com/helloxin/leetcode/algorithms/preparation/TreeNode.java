@@ -13,6 +13,7 @@ public class TreeNode {
     public TreeNode root;
     //用来存储节点
     private List<TreeNode> datas;
+
     public TreeNode(int x) { val = x; }
 
     public TreeNode getLeft() {
@@ -33,7 +34,7 @@ public class TreeNode {
 
     public TreeNode() { }
 
-    //简单根据数组的顺序构建树
+    //虽然 不是我想要的结果 但是树还是有了
     public static TreeNode buildTreeNode(int[] num){
         TreeNode root = new TreeNode(num[0]);
         for (int i = 1;i<num.length;i++){
@@ -61,13 +62,33 @@ public class TreeNode {
 
 
 
-    //将树的信息输出
-    public static void printTreeNode(TreeNode root){
+    //将树的信息输出 中序遍历
+    public static void printMidTreeNode(TreeNode root){
            if(null != root){
-               printTreeNode(root.left);
-               System.out.println(root.val);
-               printTreeNode(root.right);
+               printMidTreeNode(root.left);
+               System.out.print(root.val+" ");
+               printMidTreeNode(root.right);
            }
+
+    }
+
+    //将树的信息输出 前序遍历
+    public static void printPreTreeNode(TreeNode root){
+        if(null != root){
+            System.out.print(root.val+" ");
+            printMidTreeNode(root.left);
+            printMidTreeNode(root.right);
+        }
+
+    }
+
+    //将树的信息输出 后序遍历
+    public static void printLastTreeNode(TreeNode root){
+        if(null != root){
+            printMidTreeNode(root.left);
+            printMidTreeNode(root.right);
+            System.out.print(root.val+" ");
+        }
 
     }
 }

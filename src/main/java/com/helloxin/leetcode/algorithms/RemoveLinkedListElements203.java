@@ -1,11 +1,7 @@
 package com.helloxin.leetcode.algorithms;
 
 import com.helloxin.leetcode.algorithms.preparation.ListNode;
-import javafx.util.Builder;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Stream;
 
 /**
  * Created by nandiexin on 2018/11/27.

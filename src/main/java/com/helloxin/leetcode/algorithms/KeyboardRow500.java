@@ -25,7 +25,9 @@ public class KeyboardRow500 {
         }
         List<String> res = new LinkedList<>();
         for(String w: words){
-            if(w.equals("")) continue;
+            if(w.equals("")) {
+                continue;
+            }
             int index = map.get(w.toUpperCase().charAt(0));
             for(char c: w.toUpperCase().toCharArray()){
                 if(map.get(c)!=index){
@@ -33,7 +35,9 @@ public class KeyboardRow500 {
                     break;
                 }
             }
-            if(index!=-1) res.add(w);//if index != -1, this is a valid string
+            if(index!=-1) {
+                res.add(w);//if index != -1, this is a valid string
+            }
         }
         return res.toArray(new String[0]);
     }

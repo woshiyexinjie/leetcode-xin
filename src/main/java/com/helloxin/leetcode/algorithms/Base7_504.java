@@ -13,6 +13,7 @@ package com.helloxin.leetcode.algorithms;
  Note: The input will be in range of [-1e7, 1e7].
  */
 public class Base7_504 {
+
     public String convertTo7(int num) {
 
         if (num == 0) {

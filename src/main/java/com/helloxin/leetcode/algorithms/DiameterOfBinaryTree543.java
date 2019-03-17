@@ -38,4 +38,12 @@ public class DiameterOfBinaryTree543 {
 
         return Math.max(left, right) + 1;
     }
+
+    public static void main(String[] args) {
+
+
+        int a[] = {12,2,3,4};
+        a= null;
+
+    }
 }

@@ -68,6 +68,7 @@ public class NondecreasingArray665 {
 
     public static void main(String[] args) {
 
+        //业务逻辑修改 要在这加点逻辑
 
         int nums[]={4,2,3};
         System.out.println(checkPossibility(nums));

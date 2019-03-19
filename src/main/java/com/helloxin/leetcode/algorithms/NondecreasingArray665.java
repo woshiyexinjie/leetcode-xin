@@ -79,5 +79,7 @@ public class NondecreasingArray665 {
         //fix 这个bug
 
         //测试一下 版本3
+
+        //开发阶段版本3 1
     }
 }

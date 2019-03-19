@@ -81,5 +81,9 @@ public class NondecreasingArray665 {
         //测试一下 版本3
 
         //开发阶段版本3 1
+
+        //开发阶段版本3 2
+
+
     }
 }

@@ -73,5 +73,7 @@ public class NondecreasingArray665 {
         System.out.println(checkPossibility(nums));
 
         //测试一下 版本1
+
+        //测试一下 版本2
     }
 }

@@ -116,4 +116,10 @@ public class ValidParentheses {
         System.out.println(isValid("{"));
         System.out.println(isValid("([{}])"));
     }
+
+    /**
+     * Created by nandiexin on 2019/3/25.
+     */
+    public static class DegreeOfAnArray697 {
+    }
 }

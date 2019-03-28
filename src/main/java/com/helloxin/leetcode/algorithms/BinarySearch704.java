@@ -32,7 +32,7 @@ public class BinarySearch704 {
     public int search(int[] nums, int target) {
 
         int pre = 0;
-        int las = nums.length;
+        int las = nums.length-1;
         while (pre <= las) {
             int mid = (pre + las) >>> 1;
             if (nums[mid] < target) {

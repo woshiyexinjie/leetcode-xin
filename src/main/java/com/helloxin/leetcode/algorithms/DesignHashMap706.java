@@ -32,30 +32,38 @@ public class DesignHashMap706 {
 
     int[] arr;
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     public DesignHashMap706() {
         arr = new int[1000000];
     }
 
-    /** value will always be non-negative. */
+    /**
+     * value will always be non-negative.
+     */
     public void put(int key, int value) {
-        arr[hash(key)] = value+1;
+        arr[hash(key)] = value + 1;
     }
 
-    /** Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key */
+    /**
+     * Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key
+     */
     public int get(int key) {
-        if(arr[hash(key)] ==0){
+        if (arr[hash(key)] == 0) {
             return -1;
         }
-        return arr[hash(key)]-1;
+        return arr[hash(key)] - 1;
     }
 
-    /** Removes the mapping of the specified value key if this map contains a mapping for the key */
+    /**
+     * Removes the mapping of the specified value key if this map contains a mapping for the key
+     */
     public void remove(int key) {
         arr[hash(key)] = 0;
     }
 
-    private int hash(int i){
+    private int hash(int i) {
         return i;
     }
 }

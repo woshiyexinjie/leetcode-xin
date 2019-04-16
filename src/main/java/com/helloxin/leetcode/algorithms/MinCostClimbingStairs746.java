@@ -28,7 +28,7 @@ package com.helloxin.leetcode.algorithms;
 public class MinCostClimbingStairs746 {
 
     /**
-     *看了别人的解答才知道 原来这道题目是这个意思
+     * 看了别人的解答才知道 原来这道题目是这个意思
      * 但是也好难理解呀  选择继续爬一个阶梯或者爬两个阶梯  这个费力不费力是怎么计算的呀  真是难以理解呀
      * 要是理解成买个台阶有多少钉子 踩中的最少的概率的方式 这样好像还可以
      */

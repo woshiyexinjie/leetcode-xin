@@ -60,6 +60,7 @@ public class ReachANumber754 {
             step++;
             sum += step;
         }
+        //这里 step++的可能是个偶数 所以
         while ((sum - target) % 2 != 0) {
             step++;
             sum += step;

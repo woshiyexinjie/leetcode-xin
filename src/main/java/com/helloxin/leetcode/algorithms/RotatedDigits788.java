@@ -20,10 +20,11 @@ public class RotatedDigits788 {
 
     public int rotatedDigits(int N) {
         int count = 0;
-        for (int i = 1; i <= N; i ++) {
-            if (isValid(i)) {
-                count ++;
+        for (int i = 1; i <= N; i++) {
+            if (!isValid(i)) {
+                continue;
             }
+            count++;
         }
         return count;
     }
@@ -59,5 +60,14 @@ public class RotatedDigits788 {
             N = N / 10;
         }
         return validFound;
+    }
+}
+
+class Node {
+    int i;
+    Node next;
+
+    Node(int i) {
+        this.i = i;
     }
 }

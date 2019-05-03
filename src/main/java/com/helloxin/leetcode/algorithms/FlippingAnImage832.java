@@ -1,0 +1,21 @@
+package com.helloxin.leetcode.algorithms;
+
+/**
+ * Created by nandiexin on 2019/5/3.
+ */
+public class FlippingAnImage832 {
+
+    public int[][] flipAndInvertImage(int[][] A) {
+        int n = A.length;
+        for (int[] row : A) {
+            for (int i = 0; i * 2 < n; i++) {
+                if (row[i] == row[n - i - 1]) {
+                    row[i] = row[n - i - 1] ^= 1;
+                }
+            }
+        }
+        return A;
+    }
+
+
+}

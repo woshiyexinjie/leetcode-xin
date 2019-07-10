@@ -38,7 +38,7 @@ import java.util.Set;
  */
 public class UniqueEmailAddresses929 {
 
-    public int numUniqueEmails(String[] emails) {
+    public static int numUniqueEmails(String[] emails) {
         Set<String> normalized = new HashSet<>(); // used to save simplified email address, cost O(n) sapce.
         for (String email : emails) {
             String[] parts = email.split("@"); // split into local and domain parts.
@@ -48,7 +48,7 @@ public class UniqueEmailAddresses929 {
         return normalized.size();
     }
 
-    public int numUniqueEmails2(String[] emails) {
+    public static int numUniqueEmails2(String[] emails) {
         Set<String> set = new HashSet<>();
         for(String email : emails) {
             StringBuilder sb = new StringBuilder();
@@ -56,7 +56,7 @@ public class UniqueEmailAddresses929 {
                 if (c == '.') {
                     continue;
                 }
-                if (c == '+') {
+                if (c == '+' || c == '@') {
                     break;
                 }
                 sb.append(c);
@@ -65,5 +65,12 @@ public class UniqueEmailAddresses929 {
             set.add(cur);
         }
         return set.size();
+    }
+
+    public static void main(String[] args) {
+
+        String  emails[]={"test.email+alex@leetcode.com", "test.email@leetcode.com"};
+        System.out.println(numUniqueEmails(emails));
+        System.out.println(numUniqueEmails2(emails));
     }
 }

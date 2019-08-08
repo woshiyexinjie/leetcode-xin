@@ -39,7 +39,7 @@ public class DIStringMatch942 {
 
     //思考了很久 没有什么思路 因为我总是纠结在峰值和低谷的地方
     //看了大神的思路 就是其实满足其中一个要求的数据 没必要全盘考虑
-    //这题可以假设
+    //这题可以让上下浮动这种事情来让 S中的字符来决定
     public static int[] diStringMatch(String S) {
 
         int n = S.length(), left = 0, right = n;

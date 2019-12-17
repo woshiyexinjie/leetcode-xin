@@ -26,7 +26,6 @@ public class NumberOfEquivalentDominoPairs1128 {
             int pairs = map.getOrDefault(key, 0); // the number of dominoes already in the map is the number of the newly found pairs.
             cnt += pairs;
             map.put(key, 1 + pairs);
-
         }
         return cnt;
     }

@@ -1,5 +1,8 @@
 package com.helloxin.leetcode.algorithms;
 
+import java.util.Comparator;
+import java.util.stream.Stream;
+
 /**
  * Created by yebanxian on 2020/2/12.
  * Given a string text, you want to use the characters of text to form as many instances of the word "balloon" as possible.
@@ -56,5 +59,8 @@ public class MaximumNumberOfBalloons1189 {
 
     public static void main(String[] args) {
         System.out.println(maxNumberOfBalloons("loonbalxballpoon"));
+        //比较数的大小 有什么方法
+        System.out.println(Stream.of(1,2,3,4,5).min(Comparator.naturalOrder()).get());
+
     }
 }
